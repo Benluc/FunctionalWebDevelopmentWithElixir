@@ -6,7 +6,7 @@ defmodule IslandsEngine.Game do
   @players [:player1, :player2]
 
   def start_link(name) when is_binary(name) do
-    GenServer.start_link(__MODULE__, via_tuple(name), [])
+    GenServer.start_link(__MODULE__, name, name: via_tuple(name))
   end
 
   def via_tuple(name) do
